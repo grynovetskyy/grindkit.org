@@ -1,0 +1,91 @@
+:root{
+  --coffee-brown:#4B3621;
+  --cream:#F4EDE1;
+  --metal-gray:#A0A0A0;
+  --orange:#FF8C42;
+  --black:#1C1C1C;
+  --code-bg:#2B2B2B;
+  --code-fg:#E6E6E6;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--cream);
+  background:var(--coffee-brown);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+.container{width:min(1100px, 92%);margin-inline:auto}
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:8px;top:8px;width:auto;height:auto;background:#fff;color:#000;padding:8px 10px;border-radius:6px}
+
+/* Nav */
+.site-header{position:sticky;top:0;z-index:40;background:var(--coffee-brown);backdrop-filter:saturate(180%) blur(4px)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--cream);text-decoration:none;font-weight:700}
+.brand-mark{filter:drop-shadow(0 1px 1px rgba(0,0,0,.2))}
+.brand-name{letter-spacing:.3px}
+.nav-links{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+.nav-links a{color:var(--cream);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
+.nav-links a:hover{border-bottom-color:var(--orange)}
+.nav-toggle{display:none;flex-direction:column;gap:4px;background:transparent;border:0}
+.nav-toggle span{width:24px;height:2px;background:var(--cream);display:block}
+
+@media (max-width: 780px){
+  .nav-toggle{display:flex}
+  .nav-links{position:absolute;right:0;top:60px;background:var(--coffee-brown);flex-direction:column;gap:0;width:100%;max-height:0;overflow:hidden;transition:max-height .25s ease}
+  .nav-links.open{max-height:260px;border-top:1px solid rgba(255,255,255,.08)}
+  .nav-links li{border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-links a{display:block;padding:12px 16px}
+}
+
+/* Hero */
+.hero{padding:56px 0;background:linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0))}
+.hero-inner{display:grid;grid-template-columns: 1.1fr .9fr;align-items:center;gap:32px}
+.hero h1{font-size: clamp(32px, 5vw, 46px);line-height:1.15;margin:0 0 10px}
+.lead{font-size: clamp(16px, 2.5vw, 20px);color:#f7efe2;margin:0 0 22px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-art{position:relative}
+.hero-art::after{content:"";position:absolute;inset:auto -20px -20px auto;width:160px;height:160px;background:radial-gradient(closest-side, rgba(255,140,66,.35), transparent);filter:blur(12px);z-index:-1}
+
+/* Sections */
+.section{padding:56px 0;color:var(--black);background:#fff0}
+.section-cream{background:var(--cream)}
+.section-title{font-size:28px;color:var(--black);margin:0 0 18px}
+
+/* Cards */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--cream);border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.1);padding:18px;display:flex;flex-direction:column}
+.card-icon{width:48px;height:48px;margin-bottom:8px;opacity:.95}
+.card-title{margin:6px 0 4px;color:var(--black)}
+.card-text{margin:0 0 10px;color:#333}
+.card-cta{margin-top:auto;color:var(--orange);text-decoration:none}
+.card-cta:hover{text-decoration:underline}
+
+@media (max-width: 900px){
+  .card-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 560px){
+  .hero-inner{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:1fr}
+}
+
+/* Buttons */
+.btn{display:inline-block;border-radius:8px;padding:12px 20px;text-decoration:none;font-weight:600;border:2px solid transparent;transition:background .15s ease, border-color .15s ease, color .15s ease}
+.btn-primary{background:var(--orange);color:white}
+.btn-primary:hover{background:#e57d36}
+.btn-secondary{background:transparent;color:var(--coffee-brown);border-color:var(--coffee-brown)}
+.btn-secondary:hover{background:rgba(75,54,33,.08)}
+
+/* Code block */
+.code-block{background:var(--code-bg);color:var(--code-fg);padding:16px;border-radius:12px;overflow:auto}
+.code-block code{font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;font-size:13px;display:block;white-space:pre}
+
+/* Footer */
+.site-footer{background:#3e2c1a;color:#f0e7da}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.footer-link{color:#f0e7da}
+.footer-link:hover{text-decoration:none;border-bottom:1px solid currentColor}

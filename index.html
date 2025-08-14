@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GrindKit.org – Open Source Coffee Hardware</title>
+    <meta name="description" content="Open-source coffee hardware for everyone. Coffee gear you can hack." />
+    <meta property="og:title" content="GrindKit.org – Open Source Coffee Hardware" />
+    <meta property="og:description" content="Open-source coffee hardware for everyone. Coffee gear you can hack." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://grindkit.org/" />
+  <meta property="og:image" content="assets/img/og-card.svg" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="#home" class="brand">
+          <img class="brand-mark" src="assets/img/brand-mark.svg" alt="GrindKit mark" width="28" height="28" />
+          <span class="brand-name">GrindKit</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#devices">Devices</a></li>
+          <li><a href="#docs">Documentation</a></li>
+          <li><a href="https://github.com/grindkit" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="#community">Community</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Open-source coffee hardware for everyone.</h1>
+            <p class="lead">Coffee gear you can hack. Your grinder. Your code. Brew, tweak, repeat.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#devices">Explore Devices</a>
+              <a class="btn btn-secondary" href="https://github.com/grindkit" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+          <div class="hero-art">
+            <img src="assets/img/hero-illustration.svg" alt="Gears and coffee bean illustration" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Devices -->
+      <section id="devices" class="section section-cream">
+        <div class="container">
+          <h2 class="section-title">Devices</h2>
+          <div class="card-grid">
+            <article class="card">
+              <img src="assets/img/icon-grinder.svg" alt="Grinder icon" class="card-icon" />
+              <h3 class="card-title">Grinder</h3>
+              <p class="card-text">Precision grinding with open firmware and modular sensors.</p>
+              <a class="card-cta" href="#docs">Learn more →</a>
+            </article>
+            <article class="card">
+              <img src="assets/img/icon-scale.svg" alt="Scale icon" class="card-icon" />
+              <h3 class="card-title">Scale</h3>
+              <p class="card-text">Low-latency weight readings, BLE, and scriptable automations.</p>
+              <a class="card-cta" href="#docs">Learn more →</a>
+            </article>
+            <article class="card">
+              <img src="assets/img/icon-doser.svg" alt="Doser icon" class="card-icon" />
+              <h3 class="card-title">Doser</h3>
+              <p class="card-text">Smart dosing with hopper sensors and PID feed control.</p>
+              <a class="card-cta" href="#docs">Learn more →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Docs teaser -->
+      <section id="docs" class="section">
+        <div class="container">
+          <h2 class="section-title">Documentation</h2>
+          <p>Our docs are written like code. Read, fork, and contribute.</p>
+          <pre class="code-block"><code>// grinder.toml
+[motor]
+steps_per_rev = 200
+max_rpm = 600
+
+[sensors]
+load_cell = true
+thermistor = true
+
+[ui]
+ble = true
+rgb_status_led = true
+</code></pre>
+          <div class="doc-ctas">
+            <a class="btn btn-primary" href="https://github.com/grindkit" target="_blank" rel="noopener">Open Docs</a>
+            <a class="btn btn-secondary" href="#community">Join Community</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community -->
+      <section id="community" class="section section-cream">
+        <div class="container">
+          <h2 class="section-title">Community</h2>
+          <ul class="community-links">
+            <li><a href="https://github.com/grindkit" target="_blank" rel="noopener">GitHub Org</a></li>
+            <li><a href="#" aria-disabled="true">Discord (soon)</a></li>
+            <li><a href="#" aria-disabled="true">Discussions (soon)</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> GrindKit. Open source coffee hardware.</p>
+  <a class="footer-link" href="LICENSE">License</a>
+      </div>
+    </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  </body>
+  </html>
